@@ -20,7 +20,62 @@
       </nav>
     </div>
   </header>
-  <div class="hero" aria-label="Page banner"></div>
+ <!-- HERO: guaranteed-visible overlay (works even if image fails) -->
+<div class="hero" aria-label="Page banner">
+  <img id="heroImg" alt="Waikīkī view" class="hero-image">
+  <div class="hero-text" id="pageTitle">Loading…</div>
+</div>
+
+<style>
+  /* Make the hero BOX visible no matter what */
+  .hero{
+    position: relative;
+    min-height: 320px;   /* force height so text doesn’t float */
+    height: 35vh;
+    background: linear-gradient(180deg, #0b5 0%, #094 100%); /* fallback color */
+    overflow: clip;
+  }
+  .hero-image{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-text{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // 1) Overlay text from <title>
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/^WTMA\s*[—-]\s*/,'').trim();
+
+  // 2) Set your image path HERE (keep it simple, no spaces)
+  //    Put the file at: /assets/waikiki.jpg  (or adjust below)
+  const IMG_PATH = "waikiki_3.webp";
+
+  const img = document.getElementById("heroImg");
+  img.src = IMG_PATH;
+
+  // 3) Debug helpers: if it fails to load, we’ll tell you on-screen and in console
+  img.addEventListener("error", () => {
+    console.warn("Hero image failed to load:", IMG_PATH);
+    document.getElementById("pageTitle").textContent =
+      "About — (image not found: " + IMG_PATH + ")";
+    // Keep the gradient background so it’s still readable
+  });
+
+  // 4) Bonus: stamp the footer year if you use #y
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
 
   <main id="main">
     <section id="news" aria-labelledby="news-h">
@@ -45,3 +100,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
