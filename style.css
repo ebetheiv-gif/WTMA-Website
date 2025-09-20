@@ -107,4 +107,18 @@ footer { border-top: 1px solid #e8edf2; color: var(--muted); padding: 2rem 1rem;
   background: 
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url("waikiki_3.webp") center/cover no-repeat;
+}.hero {
+  position: relative;
+  min-height: 320px;
+  height: 35vh;
+  overflow: hidden;
+
+  /* Dark overlay + image */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url("waikiki_3.webp") center/cover no-repeat;
+}
+.logo {
+  position: relative;
+  top: -12px;   /* move up (adjust the number as needed) */
 }
