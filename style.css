@@ -35,7 +35,7 @@ body {
   text-decoration: none; color: var(--brand-ink); font-weight: 600; margin-left: 1rem; padding: .35rem .5rem; border-radius: 8px;
 }
 .topnav a:hover { background: var(--accent); }
-body[data-page="home"]    .topnav a[data-nav="home"],
+body[data-page="about"]    .topnav a[data-nav="about"],
 body[data-page="projects"].topnav a[data-nav="projects"],
 body[data-page="news"]    .topnav a[data-nav="news"],
 body[data-page="contact"] .topnav a[data-nav="contact"] {
