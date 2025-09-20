@@ -53,7 +53,7 @@
     .hero {
       width: 100%;
       aspect-ratio: 16/6;                   /* responsive height */
-      background: #cfdbe4 url("banner.jpg") center/cover no-repeat; /* replace */
+      background: #cfdbe4 url("WTMA LOGO_07-19-2023-2 (1) (1).JPG") center/cover no-repeat; /* replace */
     }
 
     /* Sub-navigation (sticky) */
