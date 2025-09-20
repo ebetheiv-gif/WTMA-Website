@@ -3,50 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WTMA — About</title>
+  <title>WTMA — Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body data-page="home">
   <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- Optional global header -->
   <header class="site-header" role="banner">
     <div class="inner">
       <img class="logo" src="assets/logo.png" alt="WTMA logo" />
       <div class="brand">Waikīkī Transportation Management Association</div>
+      <nav class="topnav" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="news.html" data-nav="news">News</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
     </div>
   </header>
+  <div class="hero" aria-label="Page banner"></div>
 
-  <!-- Banner / hero image -->
-  <div class="hero" aria-label="Page banner image"></div>
-
-  <!-- Sub-navigation (same-page links) -->
-  <div class="subnav-wrap" role="navigation" aria-label="About sub-navigation">
+  <div class="subnav-wrap" role="navigation" aria-label="Section navigation">
     <nav class="subnav">
-      <a href="#background" class="active">Background</a>
-      <a href="#mission">Mission</a>
-      <a href="#history">History</a>
-      <a href="#board">Board</a>
-      <a href="#staff">Staff</a>
-      <a href="#contact">Contact</a>
+      <a href="#background" class="active">Background</a><a href="#history">History</a><a href="#team">Team</a>
     </nav>
   </div>
 
-  <!-- Optional breadcrumb/title -->
-  <div class="page-title">
-    About WTMA
-  </div>
-
   <main id="main">
-    <!-- Sections (IDs must match the subnav hrefs) -->
     <section id="background" aria-labelledby="background-h">
       <span class="eyebrow">About</span>
       <h2 id="background-h">Background</h2>
       <div class="two-col">
         <div>
-          <p>Brief overview of WTMA—what it is, who it serves, and why it exists. Keep this to 2–3 short paragraphs for scannability. Link to key documents as needed.</p>
-          <p>Add a second paragraph with 1–2 sentences on current priorities (e.g., curb management, safety, freight, and passenger pickup). Keep language plain and public-facing.</p>
+          <p>Brief overview of WTMA—mission, service area, and purpose. Replace with your content.</p>
+          <p>Current priorities include curb management, safety, freight coordination, and passenger pickup.</p>
         </div>
         <aside class="card">
           <strong>Quick facts</strong>
@@ -54,53 +43,23 @@
             <li>Founded: YYYY</li>
             <li>Service area: Waikīkī</li>
             <li>Focus: Safety, access, curb management</li>
-            <li>Partners: City &amp; County of Honolulu, businesses, residents</li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section id="mission" aria-labelledby="mission-h">
-      <span class="eyebrow">About</span>
-      <h2 id="mission-h">Mission</h2>
-      <p>State the mission in one short sentence, then expand with a supporting paragraph. Consider adding a bulleted list of 3–5 core objectives.</p>
-      <ul>
-        <li>Improve safety and access for all users.</li>
-        <li>Coordinate curb space for freight and passenger activity.</li>
-        <li>Support data-informed decisions and community engagement.</li>
-      </ul>
-    </section>
-
     <section id="history" aria-labelledby="history-h">
       <span class="eyebrow">About</span>
       <h2 id="history-h">History</h2>
-      <p>Two or three short paragraphs summarizing milestones (founding, major pilots, partnerships, results). If you have a timeline image, drop it here.</p>
+      <p>Summarize milestones: founding, major pilots, partnerships, and results.</p>
     </section>
 
-    <section id="board" aria-labelledby="board-h">
-      <span class="eyebrow">Leadership</span>
-      <h2 id="board-h">Board of Directors</h2>
-      <div class="two-col">
-        <div>
-          <p>Brief note about board composition and governance.</p>
-        </div>
-        <div class="card">
-          <ul>
-            <li>Chair — Name, Organization</li>
-            <li>Vice Chair — Name, Organization</li>
-            <li>Treasurer — Name, Organization</li>
-            <li>Secretary — Name, Organization</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="staff" aria-labelledby="staff-h">
+    <section id="team" aria-labelledby="team-h">
       <span class="eyebrow">Team</span>
-      <h2 id="staff-h">Staff</h2>
+      <h2 id="team-h">Team</h2>
       <div class="two-col">
         <div>
-          <p>Add short bios and headshots if available.</p>
+          <p>Short intro about the staff and board.</p>
         </div>
         <div class="card">
           <ul>
@@ -111,20 +70,11 @@
         </div>
       </div>
     </section>
-
-    <section id="contact" aria-labelledby="contact-h">
-      <span class="eyebrow">Get in touch</span>
-      <h2 id="contact-h">Contact</h2>
-      <p>Email: <a href="mailto:info@wtma.org">info@wtma.org</a><br/>
-         Address: 123 Example St, Honolulu, HI 96815</p>
-      <p>Follow us on <a href="#">Instagram</a> · <a href="#">LinkedIn</a></p>
-    </section>
   </main>
 
   <footer>
     © <span id="y"></span> Waikīkī Transportation Management Association
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

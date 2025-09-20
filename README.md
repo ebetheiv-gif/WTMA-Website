@@ -1,21 +1,21 @@
-# WTMA About Page Starter (Static)
-This is a minimal, static site you can deploy free on GitHub Pages/Netlify. It recreates a Squarespace-style "About" page with a banner, sticky sub-navigation, and same-page sections.
+# WTMA Static Site Starter
+Multi-page static site (free to host on GitHub Pages/Netlify). Pages:
+- `index.html` — Home (Background, History, Team)
+- `projects.html` — Projects (Current, Former, Future)
+- `news.html` — News (add more posts by duplicating article blocks)
+- `contact.html` — Contact
 
-## Files
-- `index.html` — page markup (edit text/IDs here)
-- `style.css` — styles (change colors, fonts, spacing)
-- `script.js` — scrollspy + year auto-set
-- `/assets/banner.jpg` — placeholder hero image
-- `/assets/logo.png` — placeholder logo
+## Deploy on GitHub Pages
+1. Create a new public repo (e.g., `wtma-site`).
+2. Upload all files at repo root.
+3. Settings → Pages → Build and deployment: Source = Deploy from a branch; Branch = main / root.
+4. Site will publish at `https://<username>.github.io/wtma-site/`.
 
-## Quick Start (GitHub Pages)
-1. Create a new repo (public), e.g., `wtma-site`.
-2. Upload these files to the repo root.
-3. Settings → Pages → **Build and deployment**: Source = `Deploy from a branch`; Branch = `main` / root.
-4. Save. Your site will publish at `https://<username>.github.io/wtma-site/`.
+## Editing
+- Replace text in HTML files.
+- Swap `assets/banner.jpg` and `assets/logo.png`.
+- Colors/fonts in `style.css` (`:root` vars).
 
-For a user/org site, name the repo `yourusername.github.io` to get `https://yourusername.github.io/`
-
-## Edit
-- Replace text in `index.html` and image files under `/assets/`.
-- Hero image is controlled in `style.css` under `.hero` background.
+## Notes
+- Sub-navigation on pages is sticky and scrolls to on-page sections.
+- Add more project cards/news posts by duplicating the block markup.
