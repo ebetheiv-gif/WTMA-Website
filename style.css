@@ -132,3 +132,16 @@ footer { border-top: 1px solid #e8edf2; color: var(--muted); padding: 2rem 1rem;
   width:40px; height:40px; border-radius:6px; object-fit:cover; background:#dfeaf2;
   position:relative; top:-10px; /* tweak -6 to -12px to taste */
 }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+@media (min-width: 560px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
