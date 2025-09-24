@@ -42,6 +42,13 @@ body[data-page="contact"] .topnav a[data-nav="contact"] {
   background: var(--brand); color: #fff;
 }
 
+/* Keep Projects button highlighted on projects page, even when hovering other links */
+body[data-page="projects"] .topnav a[data-nav="projects"]:hover,
+body[data-page="projects"] .topnav a[data-nav="projects"] {
+  background: var(--brand) !important;
+  color: #fff !important;
+}
+
 /* Subnav */
 .subnav-wrap { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid #e8edf2; }
 .subnav {
