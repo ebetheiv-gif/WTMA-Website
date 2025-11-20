@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WTMA — Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="inner">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="WTMA LOGO_07-19-2023-2 (1) (1).JPG" alt="WTMA logo" />
+        <div class="brand">Waikīkī Transportation Management Association</div>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="index.html" data-nav="home">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="news.html" data-nav="news">News</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+ <!-- HERO: guaranteed-visible overlay (works even if image fails) -->
+<div class="hero" aria-label="Page banner">
+  <img id="heroImg" alt="Waikīkī view" class="hero-image">
+  <div class="hero-text" id="pageTitle">Loading…</div>
+</div>
+
+<style>
+  /* Make the hero BOX visible no matter what */
+  .hero{
+    position: relative;
+    min-height: 320px;   /* force height so text doesn’t float */
+    height: 35vh;
+    background: linear-gradient(180deg, #0b5 0%, #094 100%); /* fallback color */
+    overflow: clip;
+  }
+  .hero-image{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-text{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // 1) Overlay text from <title>
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/^WTMA\s*[—-]\s*/,'').trim();
+
+  // 2) Set your image path HERE (keep it simple, no spaces)
+  //    Put the file at: /assets/waikiki.jpg  (or adjust below)
+  const IMG_PATH = "waikiki_3.webp";
+
+  const img = document.getElementById("heroImg");
+  img.src = IMG_PATH;
+
+  // 3) Debug helpers: if it fails to load, we’ll tell you on-screen and in console
+  img.addEventListener("error", () => {
+    console.warn("Hero image failed to load:", IMG_PATH);
+    document.getElementById("pageTitle").textContent =
+      "About — (image not found: " + IMG_PATH + ")";
+    // Keep the gradient background so it’s still readable
+  });
+
+  // 4) Bonus: stamp the footer year if you use #y
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+  <main id="main">
+    <section id="contact" aria-labelledby="contact-h">
+      <span class="eyebrow">Get in touch</span>
+      <h2 id="contact-h">Contact</h2>
+      <div class="two-col">
+        <div>
+          <p>Email: <a href="mailto:info@wtma.org">TMAWAIKIKI@GMAIL.ORG</a><br/>
+             Address: Waikīkī Business Plaza Suite #1001,
+            2270 Kalākaua Ave, Honolulu, HI 96815</p>
+        </div>
+        <aside class="card">
+          <strong>Office Location</strong>
+          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0695732268014!2d-157.83068682453734!3d21.278607779149894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c007275ef6a759d%3A0x3bcea8af247ef974!2s2270%20Kal%C4%81kaua%20Ave%2C%20Honolulu%2C%20HI%2096815!5e1!3m2!1sen!2sus!4v1758403746770!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Waikīkī Transportation Management Association
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

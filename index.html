@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WTMA — About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="inner">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="WTMA LOGO_07-19-2023-2 (1) (1).JPG" alt="WTMA logo" />
+        <div class="brand">Waikīkī Transportation Management Association</div>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="index.html" data-nav="home">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="news.html" data-nav="news">News</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+ <!-- HERO: guaranteed-visible overlay (works even if image fails) -->
+<div class="hero" aria-label="Page banner">
+  <img id="heroImg" alt="Waikīkī view" class="hero-image">
+  <div class="hero-text" id="pageTitle">Loading…</div>
+</div>
+
+<style>
+  /* Make the hero BOX visible no matter what */
+  .hero{
+    position: relative;
+    min-height: 320px;   /* force height so text doesn’t float */
+    height: 35vh;
+    background: linear-gradient(180deg, #0b5 0%, #094 100%); /* fallback color */
+    overflow: clip;
+  }
+  .hero-image{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-text{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // 1) Overlay text from <title>
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/^WTMA\s*[—-]\s*/,'').trim();
+
+  // 2) Set your image path HERE (keep it simple, no spaces)
+  //    Put the file at: /assets/waikiki.jpg  (or adjust below)
+  const IMG_PATH = "waikiki_3.webp";
+
+  const img = document.getElementById("heroImg");
+  img.src = IMG_PATH;
+
+  // 3) Debug helpers: if it fails to load, we’ll tell you on-screen and in console
+  img.addEventListener("error", () => {
+    console.warn("Hero image failed to load:", IMG_PATH);
+    document.getElementById("pageTitle").textContent =
+      "About — (image not found: " + IMG_PATH + ")";
+    // Keep the gradient background so it’s still readable
+  });
+
+  // 4) Bonus: stamp the footer year if you use #y
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+  <div class="subnav-wrap" role="navigation" aria-label="Section navigation">
+    <nav class="subnav">
+      <a href="#background" class="active">Background</a><a href="#history">History</a><a href="#team">Team</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section id="background" aria-labelledby="background-h">
+      <span class="eyebrow">About</span>
+      <h2 id="background-h">Background</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p> The Goal of the Waikīkī Transportation Management Association is to move people and goods in and out of Waikīkī BETTER. </p>
+        <p> We are a formal organization, established through public-private-partnership, through the Honolulu City Council.</p>
+        <p>Current priorities include traffic management, freight loading/unloading improvements, and pedestrian safety.</p>
+      </div>
+    </section>
+
+    <section id="history" aria-labelledby="history-h">
+      <span class="eyebrow">About</span>
+      <h2 id="history-h">History</h2>
+      <div class="two-col">
+        <div>
+          <p>The Waikīkī Transportation Management Association (WTMA) is a nonprofit corporation formally organized in <strong>2018</strong> at the request of the Waikīkī Improvement Association (WIA). It was established through legislation enacted in September 2017, creating the Waikīkī Transportation Management Special Improvement District No. 4. </p>
+          <p>WTMA was born in response to a growing problem: curb space abuse. In Waikīkī, particularly on Royal Hawaiian Avenue, unmanaged curb usage creates significant congestion and operational challenges for commercial passenger operators. The WTMA operates under a Memorandum of Agreement with the City and County of Honolulu's Department of Transportation Services (DTS) to manage the public right of way, parking facilities, and related infrastructure within Waikīkī in an effective, equitable, sustainable, and safe manner.</p>
+          <p>Since its inception, WTMA has worked with stakeholders to improve traffic flow, optimize curb usage for loading and unloading, and enhance pedestrian safety. Early initiatives included revising traffic management on Royal Hawaiian Avenue, installing regulatory signs and sensors, creating new loading zone management systems with permits and reservations, extensive communications programs with city departments and vehicle operators, targeted enforcement efforts, and pilot loading zone demonstrations with advanced vehicle detection technologies.</p>
+        </div>
+        <aside class="card">
+          <strong>Key milestones</strong>
+          <ul>
+            <li>2017: Legislation enacted (Sept)</li>
+            <li>2018: Formally organized</li>
+            <li>2016+: Royal Hawaiian Ave initiatives</li>
+            <li>2020+: Loading zone permitting & enforcement</li>
+          </ul>
+          <strong>Service & Operations</strong>
+          <ul>
+            <li>Service area: Ala Wai Canal to Kapahulu Ave</li>
+            <li>Partners: WIA, City DTS, HPD</li>
+            <li>Model: Based on 135+ TMDs nationally</li>
+            <li>Focus: Curb management & loading zones</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+ <section id="team" aria-labelledby="team-h">
+  <span class="eyebrow">About</span>
+  <h2 id="team-h">Team</h2>
+
+  <div class="team-grid">
+    <!-- Row 1 -->
+    <article class="member">
+      <img src="assets/team/wes-frystacki-jr.jpg" alt="Headshot of Wes Frystacki Jr." />
+      <h3>Wes Frystacki Jr.</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+
+    <article class="member">
+      <img src="assets/team/linda-frystacki.jpg" alt="Headshot of Linda Frystacki" />
+      <h3>Linda Frystacki</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+
+    <article class="member">
+      <img src="assets/team/wes-frystacki-iii.jpg" alt="Headshot of Wes Frystacki III" />
+      <h3>Wes Frystacki III</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+
+    <!-- Row 2 -->
+    <article class="member">
+      <img src="assets/team/samantha-garcia.jpg" alt="Headshot of Samantha Garcia" />
+      <h3>Samantha Garcia</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+
+    <article class="member">
+      <img src="assets/team/dave-marasco.jpg" alt="Headshot of Dave Marasco" />
+      <h3>Dave Marasco</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+
+    <article class="member">
+      <img src="assets/team/ernest-bethe-iv.jpg" alt="Headshot of Ernest Bethe IV" />
+      <h3>Ernest Bethe IV</h3>
+      <p class="role">Role here</p>
+      <a class="member-link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+    </article>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Waikīkī Transportation Management Association
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

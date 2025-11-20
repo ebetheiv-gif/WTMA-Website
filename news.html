@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WTMA — News</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="news">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="inner">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="WTMA LOGO_07-19-2023-2 (1) (1).JPG" alt="WTMA logo" />
+        <div class="brand">Waikīkī Transportation Management Association</div>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="index.html" data-nav="home">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="news.html" data-nav="news">News</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+ <!-- HERO: guaranteed-visible overlay (works even if image fails) -->
+<div class="hero" aria-label="Page banner">
+  <img id="heroImg" alt="Waikīkī view" class="hero-image">
+  <div class="hero-text" id="pageTitle">Loading…</div>
+</div>
+
+<style>
+  /* Make the hero BOX visible no matter what */
+  .hero{
+    position: relative;
+    min-height: 320px;   /* force height so text doesn’t float */
+    height: 35vh;
+    background: linear-gradient(180deg, #0b5 0%, #094 100%); /* fallback color */
+    overflow: clip;
+  }
+  .hero-image{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-text{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // 1) Overlay text from <title>
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/^WTMA\s*[—-]\s*/,'').trim();
+
+  // 2) Set your image path HERE (keep it simple, no spaces)
+  //    Put the file at: /assets/waikiki.jpg  (or adjust below)
+  const IMG_PATH = "waikiki_3.webp";
+
+  const img = document.getElementById("heroImg");
+  img.src = IMG_PATH;
+
+  // 3) Debug helpers: if it fails to load, we’ll tell you on-screen and in console
+  img.addEventListener("error", () => {
+    console.warn("Hero image failed to load:", IMG_PATH);
+    document.getElementById("pageTitle").textContent =
+      "About — (image not found: " + IMG_PATH + ")";
+    // Keep the gradient background so it’s still readable
+  });
+
+  // 4) Bonus: stamp the footer year if you use #y
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+
+  <main id="main">
+    <section id="news" aria-labelledby="news-h">
+      <span class="eyebrow">Updates</span>
+      <h2 id="news-h">News</h2>
+      <p>A collection of news articles related to WTMA and the work that we do.</p>
+
+      <article class="news-card">
+        <div class="news-meta">2016-04</div>
+        <h3>Wikiwiki Wire - WTMA Upgrades Royal Hawaiian Avenue Signs</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/5d2a9396a6bfb80001574e3b/1563071389979/VOL_XV1I-_04__APR_2016_-_combined_final.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2017-02</div>
+        <h3>Wikiwiki Wire - WIA Board advances proposal for Waikīkī Transportation Management Association</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/5d2a8d754c21840001473389/1563069826135/VOL_XVIII_-_02_FEBRUARY_2017_final.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2017-04-10</div>
+        <h3>Waikiki Improvement Association: Plan to Manage Street Parking and Curb-side Deliveries</h3>
+        <p><a href="https://www.hawaiipublicradio.org/government-politics/2017-04-10/waikiki-improvement-association-plan-to-manage-street-parking-and-curb-side-deliveries" target="_blank">Hawaiʻi Public Radio | By Wayne Yoshioka
+</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2018-04</div>
+        <h3>Wikiwiki Wire - Waikīkī Transportation Management Association – constituted April 4, 2018</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/5d28ea6b44c0f8000190f9a5/1562962549685/VOL_XIX-_04_APRIL_2018_-_WTMA_full_newsletter.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2020-01</div>
+        <h3>Wikiwiki Wire - Permits Required: Supplemental Permits Required for Waikīkī Loading Zones & Bus Stop Parking</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/5e10403061391f1a3c4543b2/1578123363367/WWW_XXI_01_January2020_Final2.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2021-10</div>
+        <h3>Wikiwiki Wire - WTMA Launches Curb Loading Management Plan</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/615a66285b5ff4367a53a5a6/1633314363860/WWW2021_OCT_FINAL.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="news-meta">2024-03</div>
+        <h3>Wikiwiki Wire - The WTMA's Royal Hawaiian Avenue Project</h3>
+        <p><a href="https://static1.squarespace.com/static/5d289e4caad70300015b6415/t/65e6dc2f03d0046ded09780a/1709628478896/WWW2024_March_final.pdf" target="_blank">Wikiwiki Wire</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Waikīkī Transportation Management Association
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

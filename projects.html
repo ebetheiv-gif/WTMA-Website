@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WTMA — Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="projects">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="inner">
+      <a href="index.html" class="logo-link">
+        <img class="logo" src="WTMA LOGO_07-19-2023-2 (1) (1).JPG" alt="WTMA logo" />
+        <div class="brand">Waikīkī Transportation Management Association</div>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="index.html" data-nav="home">About</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="news.html" data-nav="news">News</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+   <!-- HERO: guaranteed-visible overlay (works even if image fails) -->
+<div class="hero" aria-label="Page banner">
+  <img id="heroImg" alt="Waikīkī view" class="hero-image">
+  <div class="hero-text" id="pageTitle">Loading…</div>
+</div>
+
+<style>
+  /* Make the hero BOX visible no matter what */
+  .hero{
+    position: relative;
+    min-height: 320px;   /* force height so text doesn’t float */
+    height: 35vh;
+    background: linear-gradient(180deg, #0b5 0%, #094 100%); /* fallback color */
+    overflow: clip;
+  }
+  .hero-image{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-text{
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800;
+    font-size: clamp(28px, 5vw, 56px);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.7);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // 1) Overlay text from <title>
+  document.getElementById("pageTitle").textContent =
+    document.title.replace(/^WTMA\s*[—-]\s*/,'').trim();
+
+  // 2) Set your image path HERE (keep it simple, no spaces)
+  //    Put the file at: /assets/waikiki.jpg  (or adjust below)
+  const IMG_PATH = "waikiki_3.webp";
+
+  const img = document.getElementById("heroImg");
+  img.src = IMG_PATH;
+
+  // 3) Debug helpers: if it fails to load, we’ll tell you on-screen and in console
+  img.addEventListener("error", () => {
+    console.warn("Hero image failed to load:", IMG_PATH);
+    document.getElementById("pageTitle").textContent =
+      "About — (image not found: " + IMG_PATH + ")";
+    // Keep the gradient background so it’s still readable
+  });
+
+  // 4) Bonus: stamp the footer year if you use #y
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+  <div class="subnav-wrap" role="navigation" aria-label="Section navigation">
+    <nav class="subnav">
+      <a href="#current" class="active">Current Projects</a><a href="#former">Former Projects</a><a href="#future">Future Projects</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section id="current" aria-labelledby="current-h">
+      <span class="eyebrow">Projects</span>
+      <h2 id="current-h">Current Projects</h2>
+      <div class="cards">
+        <article class="proj-card">
+          <h3>Lewers Street Managed Zone Pilot</h3>
+          <p>The Lewers Street Managed Zone Pilot Project was launched to test new approaches for balancing loading, parking, and pedestrian needs along Lewers. <a href="lewers-street.html">Read more</a></p>
+        </article>
+        <article class="proj-card">
+          <h3>Waikīkī Tsunami Evacuation Improvement Project</h3>
+          <p>A planning effort to identify and improve tsunami evacuation routes, signage, and community preparedness across Waikīkī. <a href="waikiki-tsunami.html">Read more</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="former" aria-labelledby="former-h">
+      <span class="eyebrow">Projects</span>
+      <h2 id="former-h">Former Projects</h2>
+      <div>
+        <article>
+          <h3>Royal Hawaiian Avenue Signage & Loading Zone Expansion (2016)</h3>
+          <p><strong>Problem:</strong> Royal Hawaiian Avenue experienced significant curb space abuse, with vehicles illegally parking and overstaying in loading zones, disrupting commercial passenger operators who account for about 60% of vehicle arrivals. Uncoordinated passenger loading and confusing signage created traffic congestion and inefficient use of curb space during peak tourism periods.</p>
+          <p><strong>Solution:</strong> WTMA partnered with the City and DFS Galleria to install new regulatory signs along Royal Hawaiian Avenue, dramatically expanding the passenger loading zone from 44 to 365 feet. The system was further enhanced with sensor technology and a permit/reservation system: commercial passenger operators equip vehicles with transmitters, roadside sensors detect vehicles and verify proper permits, and operators must book reservations at least 24 hours in advance. WTMA personnel provide on-site assistance, and Honolulu Police Department Special Duty enforces the three-minute loading limit.</p>
+          <p><strong>Fit:</strong> Smoother traffic flow, reliable service for commercial passenger operators, improved passenger experience, reduced illegal parking and congestion, better accommodation of high-volume visitor transportation, and a model for scalable curb management using technology and permits.</p>
+        </article>
+        <article>
+          <h3>Parking & Curb Management Planning (2017–2018)</h3>
+          <p><strong>Problem:</strong> Parking and delivery congestion across Waikīkī's one-square-mile area from the Ala Wai Canal to Kapahulu Avenue created challenges for residents, businesses, and visitors. Unregulated loading and unloading activities violated curb access agreements and contributed to traffic flow disruptions.</p>
+          <p><strong>Solution:</strong> WTMA developed comprehensive curb management plans including dynamic pricing strategies at various times and locations, optional residential permit rates, and a master schedule for curb-side passenger and cargo deliveries. Implementation included enforcement strategies, permit requirements for freight loading zones and bus stops, and examination of regulatory changes to address compliance.</p>
+          <p><strong>Fit:</strong> Optimized curb space usage, generated funding for enforcement and new loading/unloading zones, and created a more equitable system for managing limited curb resources among competing users.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="future" aria-labelledby="future-h">
+      <span class="eyebrow">Projects</span>
+      <h2 id="future-h">Future Projects</h2>
+      <p>Waikīkī Tsunami Evacuation Route Plan</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Waikīkī Transportation Management Association
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
