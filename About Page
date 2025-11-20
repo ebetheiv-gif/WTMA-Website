@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WTMA — About</title>
+
+  <style>
+    :root{
+      --brand: #0b4a6f;          /* WTMA primary (adjust) */
+      --brand-ink: #0a3954;
+      --ink: #1d2730;
+      --muted: #6b7785;
+      --bg: #ffffff;
+      --bg-alt: #f7f9fb;
+      --accent: #e6f0f7;
+      --maxw: 1100px;
+      --section-pad: clamp(2rem, 4vw, 3.5rem);
+      --nav-h: 56px;            /* sticky subnav height */
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    /* Site header (optional) */
+    .site-header {
+      border-bottom: 1px solid #e8edf2;
+      background: #fff;
+    }
+    .site-header .inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: .75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .logo {
+      width: 40px; height: 40px; border-radius: 6px; object-fit: cover;
+      background: #dfeaf2;
+    }
+    .brand {
+      font-weight: 700; color: var(--brand-ink); letter-spacing:.2px;
+    }
+
+    /* HERO / page banner */
+    .hero {
+      width: 100%;
+      aspect-ratio: 16/6;                   /* responsive height */
+      background: #cfdbe4 url("WTMA LOGO_07-19-2023-2 (1) (1).JPG") center/cover no-repeat; /* replace */
+    }
+
+    /* Sub-navigation (sticky) */
+    .subnav-wrap {
+      position: sticky; top: 0; z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid #e8edf2;
+    }
+    .subnav {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: center;
+      gap: .25rem;
+      padding: 0 1rem;
+      overflow:auto;
+    }
+    .subnav a {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: .5rem .85rem;
+      color: var(--brand-ink);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .subnav a:hover { background: var(--accent); }
+    .subnav a.active {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    /* Page title */
+    .page-title {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1.25rem 1rem 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* Sections */
+    section {
+      scroll-margin-top: calc(var(--nav-h) + 12px); /* offsets sticky nav */
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: var(--section-pad) 1rem;
+    }
+    section:nth-of-type(even) { background: var(--bg-alt); }
+    section h2 {
+      margin: 0 0 .25rem 0;
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      line-height: 1.25;
+      color: var(--brand-ink);
+    }
+    .eyebrow {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      color: var(--muted);
+      margin-bottom: .25rem;
+    }
+    p { margin: .75rem 0 0; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 860px) {
+      .two-col { grid-template-columns: 2fr 1fr; }
+    }
+    .card {
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    /* Footer (optional) */
+    footer {
+      border-top: 1px solid #e8edf2;
+      color: var(--muted);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    /* Accessibility: skip link */
+    .skip-link {
+      position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed; left: 1rem; top: 1rem; width: auto; height: auto;
+      padding: .5rem .75rem; background: #000; color: #fff; border-radius: 6px; z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Optional global header -->
+  <header class="site-header" role="banner">
+    <div class="inner">
+      <img class="logo" src="WTMA LOGO_07-19-2023-2 (1) (1).JPG" alt="WTMA logo" />
+      <div class="brand">Waikīkī Transportation Management Association</div>
+    </div>
+  </header>
+
+  <!-- Banner / hero image -->
+  <div class="hero" aria-label="Page banner image"></div>
+
+  <!-- Sub-navigation (same-page links) -->
+  <div class="subnav-wrap" role="navigation" aria-label="About sub-navigation">
+    <nav class="subnav">
+      <a href="#background" class="active">Background</a>
+      <a href="#mission">Mission</a>
+      <a href="#history">History</a>
+      <a href="#board">Board</a>
+      <a href="#staff">Staff</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Optional breadcrumb/title -->
+  <div class="page-title">
+    About WTMA
+  </div>
+
+  <main id="main">
+    <!-- Sections (IDs must match the subnav hrefs) -->
+    <section id="background" aria-labelledby="background-h">
+      <span class="eyebrow">About</span>
+      <h2 id="background-h">Background</h2>
+      <div class="two-col">
+        <div>
+          <p>Brief overview of WTMA—what it is, who it serves, and why it exists. Keep this to 2–3 short paragraphs for scannability. Link to key documents as needed.</p>
+          <p>Add a second paragraph with 1–2 sentences on current priorities (e.g., curb management, safety, freight, and passenger pickup). Keep language plain and public-facing.</p>
+        </div>
+        <aside class="card">
+          <strong>Quick facts</strong>
+          <ul>
+            <li>Founded: YYYY</li>
+            <li>Service area: Waikīkī</li>
+            <li>Focus: Safety, access, curb management</li>
+            <li>Partners: City & County of Honolulu, businesses, residents</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="mission" aria-labelledby="mission-h">
+      <span class="eyebrow">About</span>
+      <h2 id="mission-h">Mission</h2>
+      <p>State the mission in one short sentence, then expand with a supporting paragraph. Consider adding a bulleted list of 3–5 core objectives.</p>
+      <ul>
+        <li>Improve safety and access for all users.</li>
+        <li>Coordinate curb space for freight and passenger activity.</li>
+        <li>Support data-informed decisions and community engagement.</li>
+      </ul>
+    </section>
+
+    <section id="history" aria-labelledby="history-h">
+      <span class="eyebrow">About</span>
+      <h2 id="history-h">History</h2>
+      <p>Two or three short paragraphs summarizing milestones (founding, major pilots, partnerships, results). If you have a timeline image, drop it here.</p>
+    </section>
+
+    <section id="board" aria-labelledby="board-h">
+      <span class="eyebrow">Leadership</span>
+      <h2 id="board-h">Board of Directors</h2>
+      <div class="two-col">
+        <div>
+          <p>Brief note about board composition and governance.</p>
+        </div>
+        <div class="card">
+          <ul>
+            <li>Chair — Name, Organization</li>
+            <li>Vice Chair — Name, Organization</li>
+            <li>Treasurer — Name, Organization</li>
+            <li>Secretary — Name, Organization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="staff" aria-labelledby="staff-h">
+      <span class="eyebrow">Team</span>
+      <h2 id="staff-h">Staff</h2>
+      <div class="two-col">
+        <div>
+          <p>Add short bios and headshots if available.</p>
+        </div>
+        <div class="card">
+          <ul>
+            <li>Executive Director — Name</li>
+            <li>Program Manager — Name</li>
+            <li>Analyst — Name</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <span class="eyebrow">Get in touch</span>
+      <h2 id="contact-h">Contact</h2>
+      <p>Email: <a href="mailto:info@wtma.org">info@wtma.org</a><br/>
+         Address: 123 Example St, Honolulu, HI 96815</p>
+      <p>Follow us on <a href="#">Instagram</a> · <a href="#">LinkedIn</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Waikīkī Transportation Management Association
+  </footer>
+
+  <script>
+    // Set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Scrollspy: highlight subnav link for section in view
+    const links = Array.from(document.querySelectorAll('.subnav a'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: `-40% 0px -50% 0px`, threshold: 0.01 });
+
+    sections.forEach(sec => io.observe(sec));
+  </script>
+</body>
+</html>
