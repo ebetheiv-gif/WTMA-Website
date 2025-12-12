@@ -40,6 +40,7 @@ body {
 .topnav a:hover { background: var(--accent); }
 body[data-page="home"]    .topnav a[data-nav="home"],
 body[data-page="projects"].topnav a[data-nav="projects"],
+body[data-page="annual-reports"] .topnav a[data-nav="annual-reports"],
 body[data-page="news"]    .topnav a[data-nav="news"],
 body[data-page="contact"] .topnav a[data-nav="contact"] {
   background: var(--brand); color: #fff;
@@ -48,6 +49,13 @@ body[data-page="contact"] .topnav a[data-nav="contact"] {
 /* Keep Projects button highlighted on projects page, even when hovering other links */
 body[data-page="projects"] .topnav a[data-nav="projects"]:hover,
 body[data-page="projects"] .topnav a[data-nav="projects"] {
+  background: var(--brand) !important;
+  color: #fff !important;
+}
+
+/* Keep Annual Reports button highlighted on annual reports page */
+body[data-page="annual-reports"] .topnav a[data-nav="annual-reports"]:hover,
+body[data-page="annual-reports"] .topnav a[data-nav="annual-reports"] {
   background: var(--brand) !important;
   color: #fff !important;
 }
